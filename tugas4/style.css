@@ -1,161 +1,181 @@
-/* -----------------------
-   Tampilan Umum
-------------------------*/
-body {
-  font-family: 'Poppins', sans-serif;
+/* Reset CSS dasar */
+* {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
+  box-sizing: border-box;
+}
+
+/* Styling dasar */
+body {
+  font-family: 'Poppins', 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #ff0000, #ffffff);
+  background-image: url("background.2.jpg");
   color: #333;
+  line-height: 1.6;
+  padding: 20px;
   min-height: 100vh;
 }
 
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styling dengan foto profil di tengah */
 header {
-  background: linear-gradient(90deg, #4A00E0, #8E2DE2);
-  color: white;
-  text-align: center;
-  padding: 25px 0;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-
-h1 {
-  font-size: 2em;
-  letter-spacing: 1px;
-}
-
-h2 {
-  color: #4A00E0;
-  border-bottom: 2px solid #8E2DE2;
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-/* -----------------------
-   Bagian Profil
-------------------------*/
-.profil {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  background: rgba(255, 255, 255, 0.9);
-  margin: 30px auto;
-  width: 80%;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.foto-profil {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 4px solid #8E2DE2;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.foto-profil:hover {
-  transform: scale(1.05);
-}
-
-/* -----------------------
-   Bagian Biodata
-------------------------*/
-.biodata, .hobi, .formulir {
-  background: rgba(255, 255, 255, 0.95);
-  width: 80%;
-  margin: 20px auto;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-th {
-  color: white;
-  background-color: #8E2DE2;
-}
-
-/* -----------------------
-   Daftar Hobi & Aktivitas
-------------------------*/
-ul, ol {
-  padding-left: 25px;
-}
-
-ul li, ol li {
-  margin-bottom: 5px;
-}
-
-/* -----------------------
-   Formulir Kontak
-------------------------*/
-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
-input[type="text"], input[type="email"] {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+/* Foto profil berbentuk lingkaran */
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.radio-group, .checkbox-group {
+header h1 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  color: #333;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+.bio {
+  color: #333;
+  font-weight: 500;
+  max-width: 400px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+/* Link buttons styling */
+.links {
   display: flex;
+  flex-direction: column;
   gap: 15px;
-  flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
-button {
-  background: linear-gradient(90deg, #4A00E0, #8E2DE2);
-  color: white;
-  border: none;
-  padding: 12px;
+.link-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
   border-radius: 8px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
 }
 
-button:hover {
-  background: linear-gradient(90deg, #8E2DE2, #4A00E0);
-  transform: scale(1.05);
+.link-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* -----------------------
-   Footer
-------------------------*/
+.link-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.link-button i {
+  font-size: 1.3rem;
+  margin-right: 10px;
+}
+
+/* Warna khusus untuk setiap platform */
+.link-button.instagram {
+  border-left: 4px solid #e1306c;
+}
+
+.link-button.youtube {
+  border-left: 4px solid #ff0000;
+}
+
+.link-button.tiktok {
+  border-left: 4px solid #560bb1;
+}
+
+.link-button.facebook {
+  border-left: 4px solid #1877f2;
+}
+
+.link-button.maps {
+  border-left: 4px solid #34a853; /* hijau khas Google Maps */
+}
+
+/* Efek hover warna */
+.link-button.instagram:hover {
+  background-color: #e1306c;
+  color: white;
+}
+
+.link-button.youtube:hover {
+  background-color: #ff0000;
+  color: white;
+}
+
+.link-button.tiktok:hover {
+  background: linear-gradient(90deg, #723485, #5514a4);
+  color: white;
+}
+
+.link-button.facebook:hover {
+  background-color: #1877f2;
+  color: white;
+}
+
+.link-button.maps:hover {
+  background-color: #34a853;
+  color: white;
+}
+
+/* Footer styling */
 footer {
   text-align: center;
-  padding: 15px;
-  color: white;
-  background: linear-gradient(90deg, #4A00E0, #8E2DE2);
-  margin-top: 30px;
+  color: #333;
+  font-size: 0.8rem;
+  margin-top: 20px;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
 
-/* -----------------------
-   Responsif
-------------------------*/
-@media (max-width: 768px) {
-  .profil {
-    flex-direction: column;
+/* Media query untuk responsivitas */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px 10px;
   }
-  table, th, td {
-    font-size: 14px;
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .bio {
+    font-size: 0.9rem;
+  }
+
+  .link-button {
+    padding:12px;
   }
 }
